@@ -7,7 +7,7 @@ Single-page static portfolio site for the CDTM application:
 
 Crop media by editing the inline `--x` and `--y` values on each card in `index.html`.
 They map to CSS `object-position`, for example `--x: 58%; --y: 42%`.
-Media starts greyed out; hover or focus makes it color and plays any video in that card.
+Text is visible by default. Media starts greyed out; hover or focus hides the text, restores color, and plays any video in that card.
 
 Run locally:
 
