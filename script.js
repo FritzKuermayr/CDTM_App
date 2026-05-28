@@ -25,9 +25,19 @@ document.querySelectorAll(".story-card").forEach((card) => {
   const video = card.querySelector("video");
 
   if (video) {
+    video.pause();
+
     const play = () => video.play().catch(() => {});
+    const pause = () => {
+      if (!card.matches(":hover, :focus-within")) {
+        video.pause();
+      }
+    };
+
     card.addEventListener("mouseenter", play);
+    card.addEventListener("mouseleave", pause);
     card.addEventListener("focusin", play);
+    card.addEventListener("focusout", () => requestAnimationFrame(pause));
   }
 
   card.addEventListener("pointermove", (event) => {
