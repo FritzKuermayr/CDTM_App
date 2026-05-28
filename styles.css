@@ -129,6 +129,7 @@ main {
   object-fit: cover;
   object-position: var(--x, 50%) var(--y, 50%);
   filter: grayscale(1) saturate(0.12) contrast(0.92) brightness(0.48);
+  transform: scale(var(--zoom, 1));
   transition:
     transform 900ms var(--ease),
     filter 430ms var(--ease);
@@ -202,7 +203,7 @@ main {
 .story-card:focus .media,
 .story-card:focus-within .media {
   filter: grayscale(0) saturate(1.08) contrast(1.04) brightness(1);
-  transform: scale(1.08);
+  transform: scale(calc(var(--zoom, 1) * 1.08));
 }
 
 .story-card:hover::after,
