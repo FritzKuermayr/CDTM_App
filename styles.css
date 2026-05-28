@@ -219,6 +219,121 @@ main {
   transform: translateY(-8px) scale(0.98);
 }
 
+.is-crop-editing .story-card.is-crop-selected {
+  z-index: 5;
+  outline: 2px solid var(--ink);
+  outline-offset: -4px;
+  cursor: grab;
+}
+
+.is-crop-editing .story-card.is-crop-selected:active {
+  cursor: grabbing;
+}
+
+.is-crop-editing .story-card.is-crop-selected .media {
+  filter: grayscale(0) saturate(1.08) contrast(1.04) brightness(1);
+}
+
+.is-crop-editing .story-card.is-crop-selected::after,
+.is-crop-editing .story-card.is-crop-selected .card-copy {
+  opacity: 0;
+}
+
+.crop-tool {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 40;
+  display: grid;
+  justify-items: end;
+  gap: 10px;
+  color: var(--ink);
+}
+
+.crop-tool[hidden],
+.crop-tool__panel[hidden] {
+  display: none;
+}
+
+.crop-tool__toggle,
+.crop-tool__choice,
+.crop-tool__copy {
+  appearance: none;
+  border: 1px solid rgba(251, 247, 236, 0.24);
+  border-radius: 8px;
+  color: var(--ink);
+  background: rgba(8, 8, 7, 0.86);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.crop-tool__toggle {
+  padding: 9px 12px;
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.46);
+}
+
+.crop-tool__panel {
+  width: min(330px, calc(100vw - 32px));
+  padding: 12px;
+  border: 1px solid rgba(251, 247, 236, 0.18);
+  border-radius: 8px;
+  background: rgba(8, 8, 7, 0.94);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.62);
+  backdrop-filter: blur(18px);
+}
+
+.crop-tool__choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.crop-tool__choice,
+.crop-tool__copy {
+  padding: 8px 10px;
+}
+
+.crop-tool__choice.is-active {
+  border-color: var(--ink);
+  background: rgba(251, 247, 236, 0.18);
+}
+
+.crop-tool label {
+  display: grid;
+  gap: 5px;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.crop-tool input {
+  width: 100%;
+  accent-color: var(--ink);
+}
+
+.crop-tool__readout {
+  display: block;
+  min-height: 2.5rem;
+  margin-top: 12px;
+  padding: 9px;
+  border-radius: 6px;
+  color: rgba(251, 247, 236, 0.82);
+  background: rgba(251, 247, 236, 0.08);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.crop-tool__copy {
+  width: 100%;
+  margin-top: 8px;
+}
+
 .next-arrow {
   position: absolute;
   left: 50%;

@@ -9,8 +9,8 @@
     />
     <meta name="theme-color" content="#080807" />
     <title>Forgettable Versals</title>
-    <link rel="preload" href="styles.css" as="style" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="preload" href="styles.css?v=crop-tool" as="style" />
+    <link rel="stylesheet" href="styles.css?v=crop-tool" />
   </head>
   <body>
     <main>
@@ -155,7 +155,7 @@
             />
             <div class="card-copy">
               <h2>Trend Research</h2>
-              <p>Together with Siemens - post-its, trend signals and double-diamond thinking.</p>
+              <p>Evaluating Industrial AI together w/Siemens and the double Diamond Framework</p>
             </div>
           </article>
 
@@ -173,13 +173,14 @@
             />
             <div class="card-copy">
               <h2>Product Development</h2>
-              <p>MPD - agents for agents, built at the laptop in Cafe Cosmos.</p>
+              <p>MPD - agents for agents, build in Cafe Kosmos</p>
             </div>
           </article>
 
           <article
             class="story-card module-card reveal"
-            style="--accent: #ff6b35; --x: 50%; --y: 50%"
+            data-crop-target="business"
+            style="--accent: #ff6b35; --x: 50%; --y: 50%; --zoom: 1"
             tabindex="0"
           >
             <img
@@ -190,13 +191,54 @@
             />
             <div class="card-copy">
               <h2>Business Strategy</h2>
-              <p>e-lab - market-entry strategy for a bold startup in the US and China.</p>
+              <p>Business Strategy - e-lab market entry - China vs USA</p>
             </div>
           </article>
         </section>
       </section>
     </main>
 
-    <script src="script.js" defer></script>
+    <aside class="crop-tool" data-crop-tool hidden>
+      <button
+        class="crop-tool__toggle"
+        type="button"
+        data-crop-toggle
+        aria-expanded="false"
+        aria-controls="crop-panel"
+      >
+        Edit crop
+      </button>
+
+      <div class="crop-tool__panel" id="crop-panel" data-crop-panel hidden>
+        <div class="crop-tool__choices" aria-label="Crop target">
+          <button class="crop-tool__choice" type="button" data-crop-select="industrial">
+            Industrial
+          </button>
+          <button class="crop-tool__choice" type="button" data-crop-select="business">
+            Business Strategy
+          </button>
+        </div>
+
+        <label>
+          Zoom
+          <input data-crop-zoom type="range" min="1" max="2.2" step="0.01" />
+        </label>
+        <label>
+          Horizontal
+          <input data-crop-x type="range" min="0" max="100" step="1" />
+        </label>
+        <label>
+          Vertical
+          <input data-crop-y type="range" min="0" max="100" step="1" />
+        </label>
+
+        <output class="crop-tool__readout" data-crop-readout></output>
+        <button class="crop-tool__copy" type="button" data-crop-copy>
+          Copy values
+        </button>
+      </div>
+    </aside>
+
+    <script src="script.js?v=crop-tool" defer></script>
   </body>
 </html>
