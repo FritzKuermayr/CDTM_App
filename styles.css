@@ -1,0 +1,578 @@
+:root {
+  color-scheme: dark;
+  --bg: #090907;
+  --ink: #fbf7ec;
+  --muted: rgba(251, 247, 236, 0.68);
+  --line: rgba(251, 247, 236, 0.16);
+  --panel: rgba(251, 247, 236, 0.06);
+  --shadow: rgba(0, 0, 0, 0.45);
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(135deg, rgba(255, 107, 53, 0.18), transparent 28%),
+    linear-gradient(225deg, rgba(46, 196, 182, 0.16), transparent 32%),
+    linear-gradient(180deg, #090907 0%, #15120f 42%, #07110f 100%);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(to bottom, black, transparent 82%);
+}
+
+.site-header,
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.site-header {
+  width: min(100% - 48px, 1440px);
+  margin: 0 auto;
+  padding: 28px 0 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 0.94rem;
+  text-transform: uppercase;
+}
+
+.brand span {
+  color: var(--muted);
+}
+
+.brand strong {
+  font-weight: 800;
+}
+
+.site-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(7, 7, 6, 0.54);
+  backdrop-filter: blur(18px);
+}
+
+.site-nav a {
+  padding: 10px 14px;
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  transition:
+    color 220ms var(--ease),
+    background 220ms var(--ease);
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a.active {
+  color: var(--ink);
+  background: rgba(251, 247, 236, 0.1);
+}
+
+.hero {
+  width: min(100% - 48px, 1440px);
+  margin: 0 auto;
+  padding: 88px 0 38px;
+}
+
+.kicker {
+  margin: 0 0 18px;
+  color: #f2c94c;
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 980px;
+  margin: 0;
+  font-size: 8rem;
+  line-height: 0.9;
+  font-weight: 900;
+}
+
+.prototype-hero h1 {
+  max-width: 1120px;
+  font-size: 6.2rem;
+}
+
+.hero-copy {
+  max-width: 680px;
+  margin: 30px 0 0;
+  color: var(--muted);
+  font-size: 1.25rem;
+  line-height: 1.55;
+}
+
+.build-grid,
+.course-grid {
+  width: min(100% - 48px, 1440px);
+  margin: 0 auto;
+  display: grid;
+  gap: 18px;
+}
+
+.build-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.course-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.media-card,
+.course-card {
+  position: relative;
+  min-height: 30rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 24px 80px var(--shadow);
+  isolation: isolate;
+  transform: translate3d(0, 0, 0);
+  transition:
+    transform 420ms var(--ease),
+    border-color 420ms var(--ease),
+    box-shadow 420ms var(--ease);
+}
+
+.media-card {
+  aspect-ratio: 4 / 5;
+}
+
+.media-card--wide {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 7;
+  min-height: 28rem;
+}
+
+.cdtm-link {
+  display: block;
+}
+
+.course-card {
+  aspect-ratio: 4 / 5;
+  min-height: 33rem;
+}
+
+.media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 900ms var(--ease),
+    filter 420ms var(--ease);
+}
+
+.media--portrait {
+  object-position: center 38%;
+}
+
+.media-card:nth-child(2) .media {
+  object-position: center;
+}
+
+.media-card:nth-child(4) .media {
+  object-position: center 34%;
+}
+
+.media-card:nth-child(5) .media {
+  object-position: center;
+}
+
+.course-card:nth-child(1) .media {
+  object-position: center;
+}
+
+.course-card:nth-child(2) .media {
+  object-position: center;
+}
+
+.course-card:nth-child(3) .media {
+  object-position: center;
+}
+
+.card-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.72)),
+    linear-gradient(135deg, color-mix(in srgb, var(--accent), transparent 65%), transparent 42%);
+  opacity: 0.5;
+  transition: opacity 420ms var(--ease);
+  z-index: 1;
+}
+
+.card-copy {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-content: center;
+  gap: 18px;
+  padding: 34px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(22px) scale(0.98);
+  transition:
+    opacity 360ms var(--ease),
+    transform 360ms var(--ease);
+}
+
+.card-copy h2 {
+  max-width: 10ch;
+  margin: 0 auto;
+  font-size: 2.4rem;
+  line-height: 0.94;
+  font-weight: 900;
+}
+
+.media-card--wide .card-copy h2,
+.course-card .card-copy h2 {
+  max-width: 14ch;
+  font-size: 3.2rem;
+}
+
+.card-copy p {
+  width: min(100%, 34rem);
+  margin: 0 auto;
+  color: rgba(251, 247, 236, 0.86);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.media-card:hover,
+.media-card:focus-visible,
+.media-card:focus-within,
+.course-card:hover,
+.course-card:focus-within {
+  border-color: color-mix(in srgb, var(--accent), white 18%);
+  box-shadow: 0 34px 110px rgba(0, 0, 0, 0.6);
+  transform:
+    perspective(900px)
+    rotateX(calc((var(--tilt-y, 0) * -1deg)))
+    rotateY(calc(var(--tilt-x, 0) * 1deg))
+    translateY(-8px);
+}
+
+.media-card:hover .media,
+.media-card:focus-within .media,
+.course-card:hover .media,
+.course-card:focus-within .media {
+  transform: scale(1.08);
+  filter: saturate(1.1) contrast(1.04) brightness(0.78);
+}
+
+.media-card:hover .card-shade,
+.media-card:focus-within .card-shade,
+.course-card:hover .card-shade,
+.course-card:focus-within .card-shade {
+  opacity: 0.96;
+}
+
+.media-card:hover .card-copy,
+.media-card:focus-within .card-copy,
+.course-card:hover .card-copy,
+.course-card:focus-within .card-copy {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.site-footer {
+  width: min(100% - 48px, 1440px);
+  margin: 0 auto;
+  padding: 54px 0 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  color: var(--muted);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: var(--ink);
+  border-bottom: 1px solid currentColor;
+}
+
+.prototype-flow {
+  position: relative;
+  width: min(100% - 48px, 1440px);
+  margin: 28px auto 0;
+  padding: 36px 0 10px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.flow-line {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #2ec4b6, #f2c94c, #ff6b35);
+  transform-origin: left;
+  animation: line-draw 1600ms var(--ease) both;
+}
+
+.flow-item {
+  position: relative;
+  min-height: 15rem;
+  padding: 40px 28px 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(251, 247, 236, 0.055);
+  backdrop-filter: blur(14px);
+}
+
+.flow-item span {
+  display: inline-grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #090907;
+  color: #f2c94c;
+  font-weight: 900;
+}
+
+.flow-item h2 {
+  margin: 42px 0 10px;
+  font-size: 2rem;
+}
+
+.flow-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 680ms var(--ease),
+    transform 680ms var(--ease);
+}
+
+.build-grid .reveal:nth-child(1) {
+  transition-delay: 90ms;
+}
+
+.build-grid .reveal:nth-child(2),
+.course-grid .reveal:nth-child(1) {
+  transition-delay: 150ms;
+}
+
+.build-grid .reveal:nth-child(3),
+.course-grid .reveal:nth-child(2) {
+  transition-delay: 210ms;
+}
+
+.build-grid .reveal:nth-child(4),
+.course-grid .reveal:nth-child(3) {
+  transition-delay: 270ms;
+}
+
+.build-grid .reveal:nth-child(5) {
+  transition-delay: 330ms;
+}
+
+.build-grid .reveal:nth-child(6) {
+  transition-delay: 390ms;
+}
+
+@keyframes line-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 1080px) {
+  .build-grid,
+  .course-grid,
+  .prototype-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .course-card:last-child,
+  .prototype-flow .flow-item:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .hero h1 {
+    font-size: 6rem;
+  }
+
+  .prototype-hero h1 {
+    font-size: 4.6rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    width: min(100% - 28px, 1440px);
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+
+  .site-nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .site-nav a {
+    flex: 1;
+    text-align: center;
+    padding: 10px 8px;
+    font-size: 0.84rem;
+  }
+
+  .hero,
+  .build-grid,
+  .course-grid,
+  .prototype-flow,
+  .site-footer {
+    width: min(100% - 28px, 1440px);
+  }
+
+  .hero {
+    padding: 58px 0 28px;
+  }
+
+  .hero h1,
+  .prototype-hero h1 {
+    font-size: 4rem;
+    line-height: 0.95;
+  }
+
+  .hero-copy {
+    font-size: 1.06rem;
+  }
+
+  .build-grid,
+  .course-grid,
+  .prototype-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .media-card,
+  .media-card--wide,
+  .course-card,
+  .course-card:last-child,
+  .prototype-flow .flow-item:last-child {
+    grid-column: auto;
+    aspect-ratio: 4 / 5;
+    min-height: 24rem;
+  }
+
+  .media-card--wide:first-child {
+    aspect-ratio: 16 / 11;
+  }
+
+  .card-shade,
+  .media-card:hover .card-shade,
+  .course-card:hover .card-shade {
+    opacity: 0.9;
+  }
+
+  .card-copy,
+  .media-card:hover .card-copy,
+  .course-card:hover .card-copy {
+    opacity: 1;
+    transform: none;
+    padding: 24px;
+  }
+
+  .card-copy h2,
+  .media-card--wide .card-copy h2,
+  .course-card .card-copy h2 {
+    font-size: 2.2rem;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .flow-line {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
+  video {
+    animation: none;
+  }
+}
