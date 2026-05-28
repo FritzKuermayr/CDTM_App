@@ -21,7 +21,7 @@ if ("IntersectionObserver" in window && !motionQuery.matches) {
   revealItems.forEach(reveal);
 }
 
-document.querySelectorAll(".media-card, .course-card").forEach((card) => {
+document.querySelectorAll(".story-card").forEach((card) => {
   const video = card.querySelector("video");
 
   if (video) {

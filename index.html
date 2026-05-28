@@ -5,37 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Forgettable Versals - a personal application portfolio built around technology, opportunity, organizations, connections, industrial machines, and CDTM."
+      content="Forgettable Versals - Building and the next prototype with CDTM."
     />
-    <meta name="theme-color" content="#0a0a0a" />
-    <title>Building - Forgettable Versals</title>
+    <meta name="theme-color" content="#080807" />
+    <title>Forgettable Versals</title>
     <link rel="preload" href="styles.css" as="style" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="noise" aria-hidden="true"></div>
-    <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Forgettable Versals home">
-        <span>Forgettable</span>
-        <strong>Versals</strong>
-      </a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a class="active" href="index.html">Building</a>
-        <a href="cdtm.html">CDTM Prototype</a>
-      </nav>
-    </header>
-
     <main>
-      <section class="hero home-hero reveal">
-        <p class="kicker">Personal operating system</p>
-        <h1>Building</h1>
-        <p class="hero-copy">
-          Technology, institutions, opportunity, and the people between them.
-        </p>
-      </section>
+      <section class="building-screen" aria-label="Building">
+        <h1 class="page-title reveal">Building</h1>
 
-      <section class="build-grid" aria-label="Building blocks">
-        <article class="media-card media-card--wide reveal" style="--accent: #2ec4b6">
+        <article
+          class="story-card story-card--hero reveal"
+          style="--accent: #2ec4b6; --x: 50%; --y: 50%"
+          tabindex="0"
+        >
           <video
             class="media"
             autoplay
@@ -46,110 +32,178 @@
           >
             <source src="assets/quadruped.mp4" type="video/mp4" />
           </video>
-          <div class="card-shade" aria-hidden="true"></div>
           <div class="card-copy">
             <h2>Tech</h2>
             <p>
-              A quadruped built from scratch, controlled by a ML model evaluating
-              EMG data from a novel wristband.
+              A Quadruped built from scratch, controlled by a ML Model
+              evaluating EMG Data from a novel Wristband.
             </p>
           </div>
         </article>
 
-        <article class="media-card reveal" style="--accent: #ff6b35">
-          <img
-            class="media"
-            src="assets/industrial-machines.jpeg"
-            alt="Industrial plant visit in an orange safety jacket"
-            loading="lazy"
-          />
-          <div class="card-shade" aria-hidden="true"></div>
-          <div class="card-copy">
-            <h2>Industrial Machines</h2>
-            <p>
-              The engineering behind DACH's hidden champions, from industrial
-              waste recycling to injection moulding machines.
-            </p>
-          </div>
-        </article>
-
-        <article class="media-card reveal" style="--accent: #f2c94c">
-          <video
-            class="media media--portrait"
-            autoplay
-            muted
-            loop
-            playsinline
-            poster="assets/opportunities-pa-poster.jpg"
+        <section class="image-row" aria-label="Building blocks">
+          <article
+            class="story-card reveal"
+            style="--accent: #ff6b35; --x: 58%; --y: 42%"
+            tabindex="0"
           >
-            <source src="assets/opportunities-pa.mp4" type="video/mp4" />
-          </video>
-          <div class="card-shade" aria-hidden="true"></div>
-          <div class="card-copy">
-            <h2>Opportunities</h2>
-            <p>
-              Helping young Austrians to apply to elite international
-              universities.
-            </p>
-          </div>
-        </article>
+            <img
+              class="media"
+              src="assets/industrial-machines.jpeg"
+              alt="Industrial plant visit in an orange safety jacket"
+              loading="lazy"
+            />
+            <div class="card-copy">
+              <h2>Industrial Machines</h2>
+              <p>
+                The Engineering behind DACH's Hidden Champions - from Industrial
+                Waste Recycling to Injection Moulding Machines.
+              </p>
+            </div>
+          </article>
 
-        <article class="media-card reveal" style="--accent: #1b998b">
-          <img
-            class="media"
-            src="assets/connections-ambassador.jpeg"
-            alt="Meeting Austrian ambassador Dr. Hans-Peter Glanzer"
-            loading="lazy"
-          />
-          <div class="card-shade" aria-hidden="true"></div>
-          <div class="card-copy">
-            <h2>Connections</h2>
-            <p>
-              From Madrid, Brussels and Vienna to Berkeley, Hong Kong and Hanoi.
-            </p>
-          </div>
-        </article>
+          <article
+            class="story-card reveal"
+            style="--accent: #f2c94c; --x: 50%; --y: 45%"
+            tabindex="0"
+          >
+            <img
+              class="media"
+              src="assets/opportunities-pa-poster.jpg"
+              alt="People arranging themselves into PA"
+              loading="lazy"
+            />
+            <div class="card-copy">
+              <h2>Opportunities</h2>
+              <p>
+                Helping young Austrians to apply to Elite International
+                Universities.
+              </p>
+            </div>
+          </article>
 
-        <article class="media-card reveal" style="--accent: #e84f4f">
-          <img
-            class="media"
-            src="assets/organizations-speech.jpeg"
-            alt="Speaking at a political education event"
-            loading="lazy"
-          />
-          <div class="card-shade" aria-hidden="true"></div>
-          <div class="card-copy">
-            <h2>Organizations</h2>
-            <p>
-              Founding Junos Sch&uuml;ler_innen, a student organization breaking
-              up the encrusted school representation system.
-            </p>
-          </div>
-        </article>
+          <article
+            class="story-card reveal"
+            style="--accent: #1b998b; --x: 50%; --y: 28%"
+            tabindex="0"
+          >
+            <img
+              class="media"
+              src="assets/connections-ambassador.jpeg"
+              alt="Meeting Austrian ambassador Dr. Hans-Peter Glanzer"
+              loading="lazy"
+            />
+            <div class="card-copy">
+              <h2>Connections</h2>
+              <p>
+                From Madrid, Brussels and Vienna to Berkeley, Hongkong and
+                Hanoi.
+              </p>
+            </div>
+          </article>
 
-        <a class="media-card media-card--wide cdtm-link reveal" style="--accent: #8bd450" href="cdtm.html">
-          <img
-            class="media"
-            src="assets/cdtm-product-development.png"
-            alt="CDTM product development prototype scene"
-            loading="lazy"
-          />
-          <div class="card-shade" aria-hidden="true"></div>
-          <div class="card-copy">
-            <h2>CDTM Prototype</h2>
-            <p>
-              The next prototype of me with CDTM: trend research, product
-              development, and business strategy.
-            </p>
-          </div>
+          <article
+            class="story-card reveal"
+            style="--accent: #e84f4f; --x: 50%; --y: 38%"
+            tabindex="0"
+          >
+            <img
+              class="media"
+              src="assets/organizations-speech.jpeg"
+              alt="Speaking at a political education event"
+              loading="lazy"
+            />
+            <div class="card-copy">
+              <h2>Organizations</h2>
+              <p>
+                Founding Junos Sch&uuml;ler_innen, a Student Organization
+                Breaking up the Encrusted School Representation System.
+              </p>
+            </div>
+          </article>
+
+          <article
+            class="story-card reveal"
+            style="--accent: #8bd450; --x: 50%; --y: 50%"
+            tabindex="0"
+          >
+            <img
+              class="media"
+              src="assets/cdtm-product-development.png"
+              alt="CDTM product development prototype scene"
+              loading="lazy"
+            />
+            <div class="card-copy">
+              <h2>CDTM</h2>
+              <p>The next Prototype of me with CDTM.</p>
+            </div>
+          </article>
+        </section>
+
+        <a class="next-arrow" href="#cdtm" aria-label="Scroll to CDTM section">
+          <span>What's next?</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 5v14m0 0 7-7m-7 7-7-7" />
+          </svg>
         </a>
       </section>
-    </main>
 
-    <footer class="site-footer">
-      <p>Built for momentum across code, policy, machines, and people.</p>
-      <a href="cdtm.html">Continue to CDTM</a>
-    </footer>
+      <section id="cdtm" class="cdtm-screen" aria-label="CDTM">
+        <h1 class="page-title page-title--cdtm reveal">
+          ... the next Prototype of me with CDTM
+        </h1>
+
+        <section class="module-grid" aria-label="CDTM modules">
+          <article
+            class="story-card module-card reveal"
+            style="--accent: #2ec4b6; --x: 50%; --y: 50%"
+            tabindex="0"
+          >
+            <img
+              class="media"
+              src="assets/cdtm-trend-research.png"
+              alt="Trend Research"
+              loading="lazy"
+            />
+            <div class="card-copy">
+              <h2>Trend Research</h2>
+            </div>
+          </article>
+
+          <article
+            class="story-card module-card reveal"
+            style="--accent: #f2c94c; --x: 50%; --y: 50%"
+            tabindex="0"
+          >
+            <img
+              class="media"
+              src="assets/cdtm-product-development.png"
+              alt="Product Development"
+              loading="lazy"
+            />
+            <div class="card-copy">
+              <h2>Product Development</h2>
+            </div>
+          </article>
+
+          <article
+            class="story-card module-card reveal"
+            style="--accent: #ff6b35; --x: 50%; --y: 50%"
+            tabindex="0"
+          >
+            <img
+              class="media"
+              src="assets/cdtm-business-strategy.png"
+              alt="Business Strategy"
+              loading="lazy"
+            />
+            <div class="card-copy">
+              <h2>Business Strategy</h2>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
 
     <script src="script.js" defer></script>
   </body>

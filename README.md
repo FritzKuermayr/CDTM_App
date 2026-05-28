@@ -1,9 +1,12 @@
 # CDTM Application Website
 
-Two-page static portfolio site for the CDTM application:
+Single-page static portfolio site for the CDTM application:
 
-- `index.html` - Building page with six animated media blocks.
-- `cdtm.html` - CDTM prototype page with AI-generated course visuals.
+- `index.html` - Building viewport, animated What's next scroll cue, and CDTM module section.
+- `cdtm.html` - Redirects to the CDTM section for old links.
+
+Crop media by editing the inline `--x` and `--y` values on each card in `index.html`.
+They map to CSS `object-position`, for example `--x: 58%; --y: 42%`.
 
 Run locally:
 
